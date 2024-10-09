@@ -20,7 +20,7 @@ class ValidationUpdateVideoRequest extends ValidationVideoRequest {
   }
 
   validationCanBeDownloaded() {
-    if (!this.canBeDownloaded || typeof this.canBeDownloaded !== 'boolean') {
+    if (typeof this.canBeDownloaded !== 'boolean') {
       this.errors.push({
         message: `bad`, field: 'canBeDownloaded',
       });
@@ -40,7 +40,7 @@ class ValidationUpdateVideoRequest extends ValidationVideoRequest {
   }
 
   validationPublicationDate() {
-    if (!this.publicationDate || !Date.parse(this.publicationDate)) {
+    if (!this.publicationDate || new Date(Date.parse(this.publicationDate)).toISOString() !== this.publicationDate) {
       this.errors.push({
         message: `bad`, field: 'publicationDate',
       });
