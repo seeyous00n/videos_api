@@ -14,12 +14,12 @@ class ValidationUpdateVideoRequest extends ValidationVideoRequest {
     this.canBeDownloaded = data.canBeDownloaded;
     this.minAgeRestriction = data.minAgeRestriction;
     this.publicationDate = data.publicationDate;
-    this.checkDownloaded();
-    this.checkMinAge();
-    this.checkDate();
+    this.validationCanBeDownloaded();
+    this.validationMinAgeRestriction();
+    this.validationPublicationDate();
   }
 
-  checkDownloaded() {
+  validationCanBeDownloaded() {
     if (!this.canBeDownloaded || typeof this.canBeDownloaded !== 'boolean') {
       this.errors.push({
         message: `bad`, field: '',
@@ -27,7 +27,7 @@ class ValidationUpdateVideoRequest extends ValidationVideoRequest {
     }
   }
 
-  checkMinAge() {
+  validationMinAgeRestriction() {
     if (!this.minAgeRestriction) {
       this.errors.push({
         message: `bad`, field: '',
@@ -39,7 +39,7 @@ class ValidationUpdateVideoRequest extends ValidationVideoRequest {
     }
   }
 
-  checkDate() {
+  validationPublicationDate() {
     if (!this.publicationDate || !Date.parse(this.publicationDate)) {
       this.errors.push({
         message: `bad`, field: '',
