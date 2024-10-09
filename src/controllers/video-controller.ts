@@ -33,7 +33,7 @@ class VideoController {
     try {
       const errors = new ValidationVideoRequest(req.body);
       if (errors.errors.length > 0) {
-        res.status(STATUS_CODE.BAD_REQUEST).json(errors.errors);
+        res.status(STATUS_CODE.BAD_REQUEST).json({ errorsMessages: errors.errors });
         return;
       }
       const videoDto = new VideoDto(req.body);
@@ -54,7 +54,7 @@ class VideoController {
       const errors = new ValidationUpdateVideoRequest(req.body);
 
       if (errors.errors.length > 0) {
-        res.status(STATUS_CODE.BAD_REQUEST).json(errors.errors);
+        res.status(STATUS_CODE.BAD_REQUEST).json({ errorsMessages: errors.errors });
         return;
       }
 
