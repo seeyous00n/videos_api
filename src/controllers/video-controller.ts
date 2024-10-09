@@ -23,7 +23,7 @@ class VideoController {
         res.status(STATUS_CODE.NO_CONTENT).json('id doesn\'t exist');
         return;
       }
-      res.status(STATUS_CODE.OK).json(video);
+      res.status(STATUS_CODE.NOT_FOUND).json(video);
     } catch (error) {
       res.status(STATUS_CODE.SERVER_ERROR).json('Ups..');
     }
@@ -54,7 +54,7 @@ class VideoController {
       const errors = new ValidationUpdateVideoRequest(req.body);
 
       if (errors.errors.length > 0) {
-        res.status(STATUS_CODE.BAD_REQUEST).json('InputModel has incorrect values err');
+        res.status(STATUS_CODE.BAD_REQUEST).json(errors.errors);
         return;
       }
 

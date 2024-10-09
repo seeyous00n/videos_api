@@ -22,7 +22,7 @@ class ValidationUpdateVideoRequest extends ValidationVideoRequest {
   validationCanBeDownloaded() {
     if (!this.canBeDownloaded || typeof this.canBeDownloaded !== 'boolean') {
       this.errors.push({
-        message: `bad`, field: '',
+        message: `bad`, field: 'canBeDownloaded',
       });
     }
   }
@@ -30,11 +30,11 @@ class ValidationUpdateVideoRequest extends ValidationVideoRequest {
   validationMinAgeRestriction() {
     if (!this.minAgeRestriction) {
       this.errors.push({
-        message: `bad`, field: '',
+        message: `bad`, field: 'minAgeRestriction',
       });
     } else if (this.minAgeRestriction && (this.minAgeRestriction < MIN_AGE || this.minAgeRestriction > MAX_AGE)) {
       this.errors.push({
-        message: `bad`, field: '',
+        message: `bad`, field: 'minAgeRestriction',
       });
     }
   }
@@ -42,7 +42,7 @@ class ValidationUpdateVideoRequest extends ValidationVideoRequest {
   validationPublicationDate() {
     if (!this.publicationDate || !Date.parse(this.publicationDate)) {
       this.errors.push({
-        message: `bad`, field: '',
+        message: `bad`, field: 'publicationDate',
       });
     }
   }
