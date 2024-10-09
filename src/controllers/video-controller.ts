@@ -46,7 +46,7 @@ class VideoController {
 
   updateVideo = (req: Request, res: Response, next: NextFunction) => {
     try {
-      if (!req.params.id) {
+      if (!req.params.id || !videoService.getVideo(+req.params.id)) {
         res.status(STATUS_CODE.NOT_FOUND).json('Not Found');
         return;
       }
@@ -57,7 +57,7 @@ class VideoController {
         res.status(STATUS_CODE.BAD_REQUEST).json({ errorsMessages: errors.errors });
         return;
       }
-
+      
       const dataVideo = new UpdateVideDto(req.body);
       videoService.updateVideo(+req.params.id, dataVideo);
       res.status(STATUS_CODE.NO_CONTENT).json();
