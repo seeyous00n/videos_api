@@ -13,7 +13,7 @@ class VideoService {
     let newVideo = {
       ...data,
       'id': Number(new Date().getTime()),
-      'canBeDownloaded': true,
+      'canBeDownloaded': false,
       'minAgeRestriction': null,
       'createdAt': new Date().toISOString(),
       'publicationDate': new Date(tomorrow.setDate(tomorrow.getDate() + 1)).toISOString(),
