@@ -40,6 +40,7 @@ class VideoService {
   updateVideo = (id: number, data: UpdateVideDto) => {
     db.videos.forEach((video, index) => {
       if (video.id === id) {
+        //Object.assign(db.videos[index], data);
         db.videos[index] = { ...video, ...data };
       }
     });
