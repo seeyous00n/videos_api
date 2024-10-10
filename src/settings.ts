@@ -21,10 +21,10 @@ export const VALIDATION_OPTIONS = {
 };
 
 export const STATUS_CODE = {
-  'OK': 200,
-  'CREATED': 201,
-  'NO_CONTENT': 204,
-  'BAD_REQUEST': 400,
-  'NOT_FOUND': 404,
-  'SERVER_ERROR': 500,
+  'OK_200': 200,
+  'CREATED_201': 201,
+  'NO_CONTENT_204': 204,
+  'BAD_REQUEST_400': 400,
+  'NOT_FOUND_404': 404,
+  'SERVER_ERROR_500': 500,
 };
