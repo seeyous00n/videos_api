@@ -28,7 +28,7 @@ class ValidationUpdateVideoRequest extends ValidationVideoRequest {
   }
 
   validationMinAgeRestriction() {
-    if (!this.minAgeRestriction) {
+    if (!this.minAgeRestriction && this.minAgeRestriction !== null) {
       this.errors.push({
         message: `bad`, field: 'minAgeRestriction',
       });
