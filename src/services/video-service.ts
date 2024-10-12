@@ -31,7 +31,7 @@ class VideoService {
     db.videos.forEach((video, i) => {
       if (video.id === id) index = i;
     });
-    if (index) {
+    if (index !== null) {
       return !!db.videos.splice(index, 1);
     }
     return false;
