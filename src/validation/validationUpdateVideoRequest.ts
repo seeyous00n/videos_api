@@ -1,13 +1,13 @@
 import { ValidationVideoRequest } from './validationVideoRequest';
-import { IInputUpdateVideo } from '../types/video-types';
+import { IInputUpdateVideoData } from '../types/video-types';
 
 const MAX_AGE = 18;
 const MIN_AGE = 1;
 
 class ValidationUpdateVideoRequest extends ValidationVideoRequest {
-  video: IInputUpdateVideo;
+  video: IInputUpdateVideoData;
 
-  constructor(data: IInputUpdateVideo) {
+  constructor(data: IInputUpdateVideoData) {
     super(data);
     this.video = data;
     this.validationCanBeDownloaded();
