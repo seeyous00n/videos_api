@@ -30,7 +30,7 @@ export interface IInputVideoData {
   'availableResolutions': ResolutionsEnum[]
 }
 
-export interface IUpdateVideo extends IInputVideoData {
+export interface IInputUpdateVideo extends IInputVideoData {
   'canBeDownloaded': boolean;
   'minAgeRestriction': null | number;
   'publicationDate': string;

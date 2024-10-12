@@ -1,4 +1,4 @@
-import { IUpdateVideo } from '../types/video-types';
+import { IInputUpdateVideo } from '../types/video-types';
 import { VideoDto } from './video-dto';
 
 export class UpdateVideDto extends VideoDto {
@@ -6,7 +6,7 @@ export class UpdateVideDto extends VideoDto {
   minAgeRestriction;
   publicationDate;
 
-  constructor(model: IUpdateVideo) {
+  constructor(model: IInputUpdateVideo) {
     super(model);
     this.canBeDownloaded = model.canBeDownloaded;
     this.minAgeRestriction = model.minAgeRestriction;

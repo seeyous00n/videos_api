@@ -7,8 +7,8 @@ interface IInputErrors {
 }
 
 class ValidationVideoRequest {
-  private video: IInputVideoData;
-  private field: string;
+  video: IInputVideoData;
+  field: string;
   errors: IInputErrors[];
 
   constructor(data: IInputVideoData) {
