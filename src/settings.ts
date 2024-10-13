@@ -28,3 +28,10 @@ export const STATUS_CODE = {
   'NOT_FOUND_404': 404,
   'SERVER_ERROR_500': 500,
 };
+
+export const HTTP_MESSAGE = {
+  'BAD_REQUEST': 'Bad request',
+  'ID_DOESNT_EXIST': `id doesn't exist`,
+  'NOT_FOUND': 'Not Found',
+  'SERVER_ERROR': 'Internal Server Error',
+};
