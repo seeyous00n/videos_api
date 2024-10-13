@@ -22,16 +22,19 @@ class VideoService {
     return newVideo;
   };
 
-  getVideo = (id: number): IVideo => {
-    return db.videos.filter((video => video.id === id))[0];
+  getVideo = (id: number): IVideo | undefined => {
+    return db.videos.find((video => video.id === id));
   };
 
   deleteVideo = (id: number) => {
-    let index = null;
+    let isDelete = false;
     db.videos.forEach((video, i) => {
-      if (video.id === id) index = i;
+      if (video.id === id) {
+        db.videos.splice(i, 1);
+        isDelete = true;
+      }
     });
-    return index !== null ? !!db.videos.splice(index, 1).length : false;
+    return isDelete;
   };
 
   updateVideo = (id: number, data: UpdateVideDto) => {
