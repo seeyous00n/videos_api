@@ -9,6 +9,11 @@ export const SETTINGS = {
   },
 };
 
+export const ROUTER_PATHS = {
+  VIDEOS: '/videos',
+  TESTING: '/testing/all-data',
+};
+
 export const VALIDATION_OPTIONS = {
   title: {
     name: 'title',
