@@ -25,7 +25,7 @@ export const VALIDATION_OPTIONS = {
   },
 };
 
-export const STATUS_CODE = {
+export const HTTP_STATUS_CODE = {
   'OK_200': 200,
   'CREATED_201': 201,
   'NO_CONTENT_204': 204,
@@ -33,6 +33,9 @@ export const STATUS_CODE = {
   'NOT_FOUND_404': 404,
   'SERVER_ERROR_500': 500,
 };
+
+type HttpStatusKeys = keyof typeof HTTP_STATUS_CODE;
+export type HttStatusType = (typeof HTTP_STATUS_CODE[HttpStatusKeys])
 
 export const HTTP_MESSAGE = {
   'BAD_REQUEST': 'Bad request',
