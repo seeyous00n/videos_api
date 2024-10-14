@@ -49,8 +49,7 @@ class ValidationVideoRequest {
     }
   }
 
-  private validateTextField(str: string, maxLength: number) {
-
+  validateTextField(str: string, maxLength: number) {
     if (!str || str.trim().length === 0) {
       this.errors.push({
         message: `No ${this.field}`, field: this.field,
