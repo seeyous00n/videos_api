@@ -27,14 +27,9 @@ class VideoService {
   };
 
   deleteVideo = (id: number) => {
-    let isDelete = false;
-    db.videos.forEach((video, i) => {
-      if (video.id === id) {
-        db.videos.splice(i, 1);
-        isDelete = true;
-      }
-    });
-    return isDelete;
+    const oldVideosLength = db.videos.length;
+    db.videos = db.videos.filter((video) => video.id !== id);
+    return db.videos.length === oldVideosLength - 1;
   };
 
   updateVideo = (id: number, data: UpdateVideDto) => {
