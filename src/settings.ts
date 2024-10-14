@@ -35,7 +35,7 @@ export const HTTP_STATUS_CODE = {
 };
 
 type HttpStatusKeys = keyof typeof HTTP_STATUS_CODE;
-export type HttStatusType = (typeof HTTP_STATUS_CODE[HttpStatusKeys])
+export type HttpStatusType = (typeof HTTP_STATUS_CODE[HttpStatusKeys])
 
 export const HTTP_MESSAGE = {
   'BAD_REQUEST': 'Bad request',
